@@ -5,19 +5,22 @@ using namespace std;
 
 
 void primes(int, int);
-void lcm (int, int);
+int get_lcm (int, int);
 
 int main(){
 	int first;
 	int second;
+	int lcm;
 	
 	cout << "enter first number: ";
 	cin >> first;
 	cout << "enter second number: ";
 	cin >> second;
 	
+	lcm=get_lcm(first, second);
 	primes (first, second);
-	lcm(first, second);
+
+	cout << "The LCM is :" << lcm << endl;
 	
 	return 0;
 }
@@ -34,7 +37,7 @@ void primes(int f, int s){
 		if(prime){cout << i << " is prime" << endl;}
 	}	
 }
-void lcm(int one, int two){
+int get_lcm(int one, int two){
 	int one_counter=one;
 	int two_counter=two;
 	
@@ -44,6 +47,6 @@ void lcm(int one, int two){
 		}else {
 			two+=two_counter;
 	}
-}
-cout << "The LCM is :" << two << endl;	
+}	
+return two;
 }
